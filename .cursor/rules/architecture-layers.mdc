@@ -1,0 +1,9 @@
+---
+description: Place new code by architecture layer (L0–L5), not by a frozen directory tree
+globs: "**/*.py,docs/design/**/*.md"
+alwaysApply: false
+---
+
+# Architecture layers
+
+Before adding or moving code, read `docs/design/layers.md`. That file is the home for layers, numerics, RNG threading, and who may import L3.

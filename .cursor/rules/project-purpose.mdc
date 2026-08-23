@@ -1,0 +1,17 @@
+---
+description: Project purpose — research-oriented CSI feedback exploration, not courseware
+alwaysApply: true
+---
+
+# Project purpose
+
+What the package *is* (quantities, non-goals) lives in `docs/design/requirements.md` §1–§2.
+
+## Voice
+
+- Do **not** call the package, audience, or simplifications “educational.”
+- Do **not** address the reader as a “student.”
+- Prefer **researcher**, **maintainer**, or no audience noun: “so the matrix can be inspected.”
+- Documented approximations are the **exploratory** fidelity layer (vs **spec-faithful**). Do not rename that layer “educational.” Home for those layer *definitions*: `docs/design/requirements.md` §3.
+
+Write as if the next reader will extend the package for an experiment, not as if they are completing a lab assignment.

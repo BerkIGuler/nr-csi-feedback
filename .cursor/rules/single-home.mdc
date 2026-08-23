@@ -1,0 +1,31 @@
+---
+description: Each rule or fact has one home; other files only point at it
+alwaysApply: true
+---
+
+# One home per rule
+
+Every instruction, convention, or fact has **exactly one home**. If it needs to be mentioned elsewhere, **point** at the home. Do not copy the policy. Two copies will drift and conflict.
+
+When adding or changing a rule: edit the home only. Update pointers if the path changed. Do not paste the new wording into a second file.
+
+## Homes
+
+| Topic | Home |
+| --- | --- |
+| What the package is (quantities, non-goals, FRs, NFRs, milestones) | `docs/design/requirements.md` |
+| Language and distribution/import names | NFR-1 and NFR-2 in that file |
+| How to write FRs | `.cursor/rules/functional-requirements.mdc` |
+| Agent voice (not “educational” / “student”) | `.cursor/rules/project-purpose.mdc` |
+| Layers, numerics, RNG *threading*, L3 vs L4 imports | `docs/design/layers.md` |
+| Branches, commits, PRs, M0 toolchain | `.cursor/engineering-conventions.md` |
+| PR form GitHub loads | `.github/PULL_REQUEST_TEMPLATE.md` |
+| This rule | this file |
+
+## Exceptions (do not treat as a second home)
+
+1. **Cursor `.mdc` loaders** — a short rule may exist only so the agent opens the home. It **must** say “read \<path\>” and **must not** restate the policy (no copied bullet lists).
+2. **Tool-required paths** — e.g. the GitHub PR template must live under `.github/`. That file *is* the home; conventions only link to it.
+3. **Index lines** — a one-line “X lives in Y” in a companion-docs or out-of-scope list is a pointer, not a copy.
+
+NFR-7 (must use `Generator`) lives in `requirements.md`. How L5 passes that generator into L2 lives in `layers.md`. Those are different facts; do not merge them into two full copies of NFR-7.

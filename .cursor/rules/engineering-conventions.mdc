@@ -1,0 +1,8 @@
+---
+description: Follow repo Git and toolchain conventions; do not invent a workflow
+alwaysApply: true
+---
+
+# Engineering conventions
+
+Read `.cursor/engineering-conventions.md` before branching, committing, opening a PR, or adding packaging/CI. That file is the home. Do not invent extra Git Flow.

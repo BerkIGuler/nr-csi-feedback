@@ -1,0 +1,49 @@
+---
+description: Functional requirements list capabilities only, not API or data-structure shape
+globs: docs/design/**/*.md
+alwaysApply: false
+---
+
+# Functional requirements are capabilities
+
+Functional requirements (FR-*) state **what the product must be able to do**. They do not name types, fields, functions, modules, strategy identifiers, or argument lists.
+
+## Split
+
+| Layer | Owns |
+| --- | --- |
+| **FR** | User-visible capabilities |
+| **Baseline / milestones** | Which subset ships in which version |
+| **Architecture** | Layers and placement (`docs/design/layers.md`); not a frozen tree |
+| **NFR** | Language, tests, RNG, docs |
+| **Acceptance** | Concrete checks (`cri == 0` is fine here) |
+
+## Do not put in an FR
+
+- Type or constructor names (`CsiReport`, `CsiConfig`)
+- Field or parameter names (`cri`, `W`, `noise_variance`)
+- Function signatures (`compute_csi_report(channel, ...)`)
+- Module layout or “independent files”
+- Strategy slugs (`single_resource`)
+- Frozen argument tuples `(seed, n_realizations, snr_grid, config)`
+- Implementation recipes (“mask on the same codebook object”, “no-op pass-through interface”)
+
+Those belong in `docs/design/layers.md` or `.cursor/engineering-conventions.md`, not in an FR. Keep FR identifiers stable when rewriting text. See `.cursor/rules/single-home.mdc`.
+
+## Examples
+
+```text
+❌ The package must define a CsiReport type with integer fields cri, ri, pmi, cqi, li.
+✅ The package must produce a CSI report containing CRI, RI, PMI, CQI, and LI.
+
+❌ Baseline strategy: single_resource → cri = 0.
+✅ With a single CSI-RS resource, the reported CRI must be that resource’s index.
+
+❌ Monte Carlo runs must be reproducible from (seed, n_realizations, snr_grid, config).
+✅ Monte Carlo results must be reproducible from a documented set of run controls.
+
+❌ Each of FR-10–FR-14 must be an independent module.
+✅ CRI, RI, PMI, CQI, and LI selection must each be testable in isolation.
+```
+
+When adding a requirement, write the capability first. If a sentence still works after you delete every identifier that would appear in Python, it can stay an FR.
