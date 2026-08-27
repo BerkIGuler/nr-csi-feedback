@@ -104,7 +104,7 @@ This is a starting cut so packaging is not redesigned on the first feature PR. L
 - **Layout:** `src/<import package>/` and `tests/`, `pyproject.toml`. Language and import name: NFR-1 and NFR-2 in `docs/design/requirements.md`.
 - **Tests:** pytest.
 - **Lint/format:** Ruff (`ruff check` and `ruff format`). One tool; no Black/Flake8 split.
-- **CI:** GitHub Actions on pull requests. The workflow **must** run pytest and Ruff. That is what “CI green” means on the PR template.
+- **CI:** GitHub Actions on pull requests into `dev` or `main`. The workflow **must** run pytest and Ruff. That is what “CI green” means on the PR template.
 - **Local hook:** optional pre-commit that runs the same Ruff commands. Convenience only; CI is the gate. Do not skip hooks when they are installed.
 - **Do not** add a second test runner, a second formatter, or a required folder tree beyond `src/` and `tests/`.
 
