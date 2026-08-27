@@ -7,4 +7,5 @@ pip install -e ".[dev]"
 ```
 
 Product: [`docs/design/requirements.md`](docs/design/requirements.md)  
-Placement: [`docs/design/layers.md`](docs/design/layers.md)
+Placement: [`docs/design/layers.md`](docs/design/layers.md)  
+Changelog: [`CHANGELOG.md`](CHANGELOG.md)
