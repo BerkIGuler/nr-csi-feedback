@@ -89,6 +89,8 @@ Ordinary PRs target **`dev`**. Hotfixes after a tag target **`main`**, then back
 
 One PR is one intent (same bar as a commit, at feature scale). Title uses the commit subject style: `feat(m1): …`. Keep the PR small enough to review in one sitting.
 
+Every PR **must** set the GitHub sidebar **Milestone** to the product milestone it implements (M0–M8 in `docs/design/requirements.md` §10) and a type **label** (`feat`, `fix`, `docs`, `chore`) matching the branch prefix.
+
 GitHub fills the form from `.github/PULL_REQUEST_TEMPLATE.md`.
 
 ## Code placement
