@@ -19,4 +19,5 @@
 ## Merge
 
 - [ ] Base is `dev` (or `main` for a post-tag hotfix)
+- [ ] GitHub Milestone and type label set (home: Pull requests in `.cursor/engineering-conventions.md`)
 - [ ] Fixup/typo commits squashed; atomic commits kept
